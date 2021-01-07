@@ -1,0 +1,32 @@
+name = "FastApproximateInference"
+uuid = "943616e2-a3e5-428e-8f76-ff77dce258ee"
+authors = ["Ali Siahkoohi <alisk@gatech.edu>"]
+version = "0.1.0"
+
+[deps]
+ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+BSON = "fbb218c0-5317-5bc6-957e-2ee96dd4b1f0"
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+DrWatson = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
+FillArrays = "1a297f60-69ca-5386-bcde-b61e274b549b"
+Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
+InvertibleNetworks = "b7115f24-5f92-4794-81e8-23b0ddb121d3"
+JLD = "4138dd39-2aa7-5051-a626-17a0bb65d9c8"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+JOLI = "bb331ad6-a1cf-11e9-23da-9bcb53c69f6f"
+JOLI4Flux = "c228d1c8-a1cf-11e9-3cb4-9bd0a4cd14fc"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+NNlib = "872c559c-99b0-510c-b3b7-b6c96a88d5cd"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Seaborn = "d2ef9438-c967-53ab-8060-373fdd9e13eb"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Wavelets = "29a6e085-ba6d-5f35-a997-948ac2efa89a"
+Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
+
+[compat]
+julia = "1.4.2"
