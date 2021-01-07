@@ -70,7 +70,7 @@ s = ArgParseSettings()
     "--sim_name"
         help = "simulation name"
         arg_type = String
-        default = "warm-start-unsupervised-hint-rosenbrock-2"
+        default = "warm-start-unsupervised-hint-rosenbrock"
 end
 parsed_args = parse_args(s)
 

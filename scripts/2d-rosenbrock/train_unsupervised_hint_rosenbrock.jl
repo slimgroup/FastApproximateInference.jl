@@ -58,7 +58,7 @@ s = ArgParseSettings()
     "--sim_name"
         help = "simulation name"
         arg_type = String
-        default = "unsupervised-hint-rosenbrock-1"
+        default = "unsupervised-hint-rosenbrock"
 end
 parsed_args = parse_args(s)
 

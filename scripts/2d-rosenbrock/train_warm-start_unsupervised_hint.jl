@@ -58,7 +58,7 @@ s = ArgParseSettings()
     "--sim_name"
         help = "simulation name"
         arg_type = String
-        default = "warm-start-unsupervised-hint-rosenbrock-1"
+        default = "warm-start-unsupervised-hint-rosenbrock"
 end
 parsed_args = parse_args(s)
 
@@ -96,7 +96,7 @@ put_params!(CH, Params)
 RB_dist = RosenbrockDistribution(0f0, 5f-1, ones(Float32, 2, 1))
 
 # Forward operator
-A = SquareCSop(n_in; s=1f0)
+A = SquareCSop(n_in; s=3f0)
 
 # Observed data
 X_true = zeros(Float32, 1, 1, 2, 1)
