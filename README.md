@@ -5,14 +5,14 @@ Experiments for [Preconditioned training of normalizing flows for variational in
 To start running the examples, clone the repository:
 
 ```bash
-$ git clone https://github.com/alisiahkoohi/FastApproximateInference.jl
+$ git clone https://github.com/slimgroup/FastApproximateInference.jl
 ```
 
 Here, we heavily rely on [InvertibleNetworks.jl](https://github.com/slimgroup/InvertibleNetworks.jl), a recently-developed, memory-efficient framework for training invertible networks in Julia.
 
 ## Installation
 
-This repository is based on [DrWatson.jl](https://github.com/JuliaDynamics/DrWatson.jl). Before running examples, install `DrWatson,jl` by:
+This repository is based on [DrWatson.jl](https://github.com/JuliaDynamics/DrWatson.jl). Before running examples, install `DrWatson.jl` by:
 
 ```julia
 pkg> add DrWatson
@@ -106,8 +106,7 @@ If you find this software useful in your research, please cite:
   month = {1},
   abstract = {In the context of inverse problems with computationally expensive forward operators, specially for domains with limited access to high-fidelity training unknown and observed data pairs, we propose a preconditioned scheme for training a conditional normalizing flow (NF) capable of directly sampling the posterior distribution. Our training objective consists of the Kullback-Leibler divergence between the predicted and the desired posterior density. To minimize the costs associated with the forward operator, we initialize the NF via the weights of another pretrained low-fidelity NF, which is trained beforehand on available low-fidelity model and data pairs. Our numerical experiments, including a 2D toy and a seismic image compressed sensing example, demonstrate the improved performance and speed-up of the proposed method compared to training a NF from scratch.},
   author = {Ali Siahkoohi and Gabrio Rizzuti and Mathias Louboutin and Philipp Witte and Felix J. Herrmann},
-  url={https://openreview.net/pdf?id=P9m1sMaNQ8T},
-  keywords = {papers}
+  url={https://openreview.net/pdf?id=P9m1sMaNQ8T}
 }
 ```
 
