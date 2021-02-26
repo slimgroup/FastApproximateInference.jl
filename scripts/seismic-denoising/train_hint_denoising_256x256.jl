@@ -60,7 +60,7 @@ s = ArgParseSettings()
     "--sim_name"
         help = "simulation name"
         arg_type = String
-        default = "seismic-denoising-256x256"
+        default = "seismic-denoising-256x256-0.3CS"
 end
 parsed_args = parse_args(s)
 
