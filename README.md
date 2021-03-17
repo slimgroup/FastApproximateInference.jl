@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/327684959.svg)](https://zenodo.org/badge/latestdoi/327684959)
+
 # FastApproximateInference.jl
 
 Experiments for [Preconditioned training of normalizing flows for variational inference in inverse problems](https://openreview.net/forum?id=P9m1sMaNQ8T)—accepted at the [3rd Symposium on Advances in Approximate Bayesian Inference](http://approximateinference.org/).
