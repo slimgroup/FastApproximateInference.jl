@@ -4,9 +4,6 @@
 
 module FastApproximateInference
 
-using DrWatson
-import Pkg; Pkg.instantiate()
-
 using JOLI
 using JLD
 using Random

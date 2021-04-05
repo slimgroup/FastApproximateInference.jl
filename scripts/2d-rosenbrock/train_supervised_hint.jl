@@ -10,7 +10,6 @@ julia train_supervised_hint.jl
 
 using DrWatson
 @quickactivate :FastApproximateInference
-import Pkg; Pkg.instantiate()
 
 using InvertibleNetworks
 using Random

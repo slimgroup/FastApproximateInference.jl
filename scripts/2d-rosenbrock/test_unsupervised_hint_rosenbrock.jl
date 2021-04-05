@@ -10,7 +10,6 @@ julia train_unsupervised_hint_rosenbrock.jl
 
 using DrWatson
 @quickactivate :FastApproximateInference
-import Pkg; Pkg.instantiate()
 
 using InvertibleNetworks
 using LinearAlgebra

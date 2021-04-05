@@ -8,21 +8,24 @@ To start running the examples, clone the repository:
 
 ```bash
 $ git clone https://github.com/slimgroup/FastApproximateInference.jl
+$ cd FastApproximateInference.jl/
 ```
 
 Here, we heavily rely on [InvertibleNetworks.jl](https://github.com/slimgroup/InvertibleNetworks.jl), a recently-developed, memory-efficient framework for training invertible networks in Julia.
 
 ## Installation
 
-This repository is based on [DrWatson.jl](https://github.com/JuliaDynamics/DrWatson.jl). Before running examples, install `DrWatson.jl` by:
+Before starting installing the required packages in Julia, make sure you have `matplotlib` and `seaborn` installed in your Python environment since we depend on `PyPlot.jl` and `Seaborn.jl` for creating figures.
 
-```julia
-pkg> add DrWatson
+Next, run the following commands in the command line to install the necessary libraries and setup the Julia project:
+
+```bash
+julia -e 'using Pkg; Pkg.add("DrWatson")'
+julia -e 'using Pkg; Pkg.Registry.add(RegistrySpec(url = "https://github.com/slimgroup/SLIMregistryJL.git"))'
+julia --project -e 'using Pkg; Pkg.instantiate()'
 ```
 
-The only other manual installation is to make sure you have `matplotlib` and `seaborn` installed in your Python environment since we depend on `PyPlot.jl` and `Seaborn` for creating figures.
-
-The necessary dependencies will be installed upon running your first experiment. If you happen to have a CUDA-enabled GPU, the code will run on it.
+After the last line, the necessary dependencies will be installed. If you happen to have a CUDA-enabled GPU, the code will run on it.
 
 ### 2D toy Rosenbrock distribution example
 

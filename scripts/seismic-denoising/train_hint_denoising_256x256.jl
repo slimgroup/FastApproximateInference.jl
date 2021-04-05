@@ -10,7 +10,6 @@ julia train_hint_denoising.jl --batchsize 256 --max_epoch 5
 
 using DrWatson
 @quickactivate :FastApproximateInference
-import Pkg; Pkg.instantiate()
 
 using InvertibleNetworks
 using JLD
