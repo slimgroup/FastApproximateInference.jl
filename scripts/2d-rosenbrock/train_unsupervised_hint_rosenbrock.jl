@@ -75,7 +75,7 @@ nx = 1
 ny = 1
 n_in = 2
 
-CHrev = reverse(NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth))
+CHrev = reverse(NetworkConditionalHINT(n_in, n_hidden, depth))
 
 # Loading the experiment—only network weights and training loss
 warmstarted_args = Dict(

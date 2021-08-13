@@ -12,6 +12,7 @@ using LinearAlgebra
 using Distributions
 using Statistics
 using InvertibleNetworks
+using CUDA
 
 # Utilities
 include("./utils/load_experiment.jl")

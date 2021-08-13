@@ -86,7 +86,7 @@ nx = 1
 ny = 1
 n_in = 2
 
-CH = NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth)
+CH = NetworkConditionalHINT(n_in, n_hidden, depth)
 
 # Noise distribution
 π_t = Normal(0f0, sigma)

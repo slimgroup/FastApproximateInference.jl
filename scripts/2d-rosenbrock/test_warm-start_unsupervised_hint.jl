@@ -87,8 +87,8 @@ nx = 1
 ny = 1
 n_in = 2
 
-CH = NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth)
-CH_rev = NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth)
+CH = NetworkConditionalHINT(n_in, n_hidden, depth)
+CH_rev = NetworkConditionalHINT(n_in, n_hidden, depth)
 
 # Loading the experiment—only network weights and training loss
 Params, fval, exp_path = load_experiment(parsed_args; return_path=true)

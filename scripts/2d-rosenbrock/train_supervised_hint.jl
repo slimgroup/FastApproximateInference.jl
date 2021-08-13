@@ -75,7 +75,7 @@ nx = 1
 ny = 1
 n_in = 2
 
-CH = NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth) |> gpu
+CH = NetworkConditionalHINT(n_in, n_hidden, depth) |> gpu
 
 # Training data
 ntrain = 5000
