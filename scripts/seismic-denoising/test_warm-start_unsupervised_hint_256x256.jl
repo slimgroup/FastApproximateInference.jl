@@ -102,8 +102,8 @@ pretrained_args = wload(exp_path)["pretrained_args"]
 
 nx, ny, n_in = size(X_fixed)[1:3]
 
-CH = NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth)
-CH_rev = NetworkConditionalHINT(nx, ny, n_in, batchsize, n_hidden, depth)
+CH = NetworkConditionalHINT(n_in, n_hidden, depth)
+CH_rev = NetworkConditionalHINT(n_in, n_hidden, depth)
 
 put_params!(CH_rev, convert(Array{Any,1}, Params))
 CH_rev = CH_rev |> gpu

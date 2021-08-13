@@ -109,7 +109,7 @@ function loss_unsupervised(
     f = (-sum(logpdf(0f0, sigma, Y_ .- Y_obs))
          - sum(exact_likelihood(Net_prior, [Zx_p, Zy])) - logdet*size(X, 4))
 
-    ΔX = wavelet_squeeze(-A.*wavelet_unsqueeze(gradlogpdf(0f0, sigma, (Y_ .- Y_obs) |> cpu))) |> gpu
+    ΔX = wavelet_squeeze(-A'.*wavelet_unsqueeze(gradlogpdf(0f0, sigma, (Y_ .- Y_obs) |> cpu))) |> gpu
     ΔX += Net_prior.backward(ΔZx, 0f0*Y, Zx, repeat(Zy, 1, 1, 1, size(Zx, 4)))[1]
     ΔX = ΔX/size(X, 4)
 
@@ -122,17 +122,24 @@ function loss_unsupervised(
     return f/size(X, 4)
 end
 
-function loss_supervised(Net::InvertibleNetwork, X, Y)
+
+function loss_supervised(
+    Net::NetworkConditionalHINT,
+    X::AbstractArray{Float32,4},
+    Y::AbstractArray{Float32,4}
+)
 
     Zx, Zy, logdet = Net.forward(X, Y)
+    z_size = size(Zx)
 
-    z_size = size(tensor_cat(Zx, Zy))
-    f = sum(logpdf(0f0, 1f0, tensor_cat(Zx, Zy))) + logdet*z_size[4]
+    f = sum(logpdf(0f0, 1f0, Zx))
+    f = f + sum(logpdf(0f0, 1f0, Zy))
+    f = f + logdet*z_size[4]
 
-    ΔZ = -gradlogpdf(0f0, 1f0, tensor_cat(Zx, Zy))/z_size[4]
-    ΔZx, ΔZy = tensor_split(ΔZ)
+    ΔZx = -gradlogpdf(0f0, 1f0, Zx)/z_size[4]
+    ΔZy = -gradlogpdf(0f0, 1f0, Zy)/z_size[4]
+
     ΔX, ΔY = Net.backward(ΔZx, ΔZy, Zx, Zy)[1:2]
-
     GC.gc()
 
     return -f/z_size[4], ΔX, ΔY

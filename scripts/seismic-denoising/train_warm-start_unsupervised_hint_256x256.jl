@@ -124,8 +124,8 @@ JLD.jldopen(data_path, "r") do file
 end
 
 # Define prior and warmstart network
-CH = NetworkConditionalHINT(nx, ny, nc, batchsize, n_hidden, depth)
-CH_prior = NetworkConditionalHINT(nx, ny, nc, batchsize, n_hidden, depth)
+CH = NetworkConditionalHINT(nc, n_hidden, depth)
+CH_prior = NetworkConditionalHINT(nc, n_hidden, depth)
 
 put_params!(CH, convert(Array{Any,1}, Params))
 put_params!(CH_prior, convert(Array{Any,1}, copy(Params)))

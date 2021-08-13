@@ -150,7 +150,7 @@ end
 
 # Create network
 CH = NetworkConditionalHINT(
-    nx, ny, n_in, batchsize, n_hidden, depth, k1=3, k2=3, p1=1, p2=1
+    n_in, n_hidden, depth, k1=3, k2=3, p1=1, p2=1
 )
 
 # Loading the experiment—only network weights and training loss
